@@ -19,7 +19,7 @@ public int? CurrentHighBid { get; set; }
 
 public DateTime AuctionEnd { get; set; }
 
-    public Status Status { get; set; } = Status.Live;
+public Status Status { get; set; } = Status.Live;
 
 public Item Item { get; set; }
 
