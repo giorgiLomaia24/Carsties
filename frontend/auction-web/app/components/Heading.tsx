@@ -2,8 +2,8 @@ import React from 'react'
 
 type Props = {
     title: string
-    subTitle: string
-    center: boolean
+    subTitle?: string
+    center?: boolean
     
 }
 

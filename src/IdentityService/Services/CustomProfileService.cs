@@ -22,7 +22,7 @@ public class CustomProfileService : IProfileService
 
         var claims = new List<Claim>
         {
-            new Claim("userName" ,user.UserName)
+            new Claim("username" ,user.UserName)
        
         };
 

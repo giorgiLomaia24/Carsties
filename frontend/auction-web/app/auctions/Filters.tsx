@@ -1,5 +1,5 @@
 import { useParamsStore } from '@/hooks/useParamsStore'
-import { Button, ButtonGroup } from 'flowbite-react'
+import { Button } from 'flowbite-react'
 import React from 'react'
 import { AiOutlineClockCircle, AiOutlineSortAscending } from 'react-icons/ai';
 import { BsFillStopCircleFill, BsStopwatchFill } from 'react-icons/bs';
@@ -60,7 +60,7 @@ export default function Filters() {
       <div className='flex justify-between items-center mb-4'>
         <div>
           <span className='uppercase text-sm text-gray-500 mr-2 '>Filter By</span>
-              <ButtonGroup>
+              <Button.Group>
                   {
                       filterButtons.map(({ label, icon: Icon, value }) => (
                           <Button
@@ -74,12 +74,12 @@ export default function Filters() {
                           </Button>
                     ))
                   }
-           </ButtonGroup>
+           </Button.Group>
               
           </div>  
           <div>
           <span className='uppercase text-sm text-gray-500 mr-2 '>Order By</span>
-              <ButtonGroup>
+              <Button.Group>
                   {
                       orderButtons.map(({ label, icon: Icon, value }) => (
                           <Button
@@ -93,12 +93,12 @@ export default function Filters() {
                     ))
                   }
                   <Button onClick={reset} color={'red'}> <GrPowerReset /></Button>
-           </ButtonGroup>
+           </Button.Group>
               
           </div>
           <div>
               <span className='uppercase text-sm text-gray-500 mr-2 '>Page Size</span>
-              <ButtonGroup>
+              <Button.Group>
                   {pageSizeButtons.map((value, i) => (
                       <Button
                           key={i}
@@ -108,7 +108,7 @@ export default function Filters() {
                           {value}
                       </Button>
                   ))}
-              </ButtonGroup>
+              </Button.Group>
        </div>
     </div>
   )
