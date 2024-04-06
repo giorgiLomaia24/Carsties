@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./nav/Navbar";
+import ToastrProvider from "./providers/ToastrProvider";
 
 
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ToastrProvider/>      
         <Navbar />
         <main className="container mx-auto px-5 pt-10">
         {children}

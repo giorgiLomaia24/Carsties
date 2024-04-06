@@ -1,5 +1,6 @@
 'use client'
 import { useParamsStore } from '@/hooks/useParamsStore';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { IoSearchSharp } from "react-icons/io5";
 
@@ -7,9 +8,13 @@ import { IoSearchSharp } from "react-icons/io5";
 export default function Search() {
     const setParams = useParamsStore(state => state.setParams);
     const setSearchValue = useParamsStore(state=> state.setSearchValue)
-    const searchValue = useParamsStore(state => state.searchValue)
-    function onSearchInputCHange(event : any) {
-        setSearchValue(event.target.value)
+    const searchValue = useParamsStore(state => state.searchValue);
+    const router = useRouter();
+    const pathName = usePathname()
+    function onSearchInputCHange(event: any) {
+        if(pathName !== '/') router.push('/')
+
+        setSearchValue(event.target.value);
     }
 
     function search() {

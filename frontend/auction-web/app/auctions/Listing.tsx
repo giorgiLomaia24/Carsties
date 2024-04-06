@@ -21,7 +21,9 @@ export default function Listing() {
     pageSize: state.pageSize,
     searchTerm: state.searchTerm,
     orderBy: state.orderBy,
-    filterBy : state.filterBy
+    filterBy: state.filterBy,
+    seller: state.seller,
+    winner: state.winner
       
   }))
 
@@ -48,10 +50,13 @@ export default function Listing() {
 
   if (!data) return <h3>Loading...</h3>
   
-  if(data.totalCount === 0) return <EmptyFillter showReset/>
-
+  if (data.totalCount === 0) return <EmptyFillter showReset />
   
+  console.log(data.results)
+
+
   return (
+    
     <>
       <Filters />
     <div className='grid grid-cols-4 gap-6'>
