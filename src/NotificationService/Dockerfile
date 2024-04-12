@@ -4,6 +4,7 @@ EXPOSE 80
 
 # copy all csproj.files and restore as distinct layers. Use of the same COPY comand
 # for every docker file in the project to take adventage of docker caching
+
 COPY  Carsties.sln Carsties.sln
 COPY  src/AuctionService/AuctionService.csproj src/AuctionService/AuctionService.csproj
 COPY  src/NotificationService/NotificationService.csproj src/NotificationService/NotificationService.csproj
@@ -19,9 +20,9 @@ RUN dotnet restore Carsties.sln
 
 #copy the app folders over
 
-COPY src/GatewayService src/GatewayService
+COPY src/NotificationService src/NotificationService
 COPY src/Contracts src/Contracts
-WORKDIR /app/src/GatewayService
+WORKDIR /app/src/NotificationService
 RUN dotnet publish -c Release -o /app/src/out
 
 #build runtime image
@@ -29,4 +30,4 @@ RUN dotnet publish -c Release -o /app/src/out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet","GatewayService.dll" ]
+ENTRYPOINT [ "dotnet","NotificationService.dll" ]
