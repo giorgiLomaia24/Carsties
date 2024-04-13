@@ -30,7 +30,7 @@ export default function Search() {
               value={searchValue}
               type="text"
               placeholder='Search for cars by make, model, year or color'
-              className='flex-grow pl-5 bg-transparent focus:outline-none border-transparent  focus:border-transparent focus:ring-0 text-sm text-gray-600' />
+              className='custom-input text-sm text-gray-600' />
           <button onClick={search}>
               <IoSearchSharp size={34}
                className='bg-black text-yellow-300 rounded-full cursor-pointer p-2 mx-2'/>

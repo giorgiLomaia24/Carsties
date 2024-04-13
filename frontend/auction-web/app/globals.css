@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .custom-input {
+        @apply flex-grow pl-5 bg-transparent focus:outline-none border-transparent  focus:border-transparent focus:ring-0
+    }
+}
+
