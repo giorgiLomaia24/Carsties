@@ -20,8 +20,8 @@ export default function Search() {
     function search() {
         setParams({searchTerm:searchValue})
     }
-  return (
-      <div className='flex w-[50%] items-center border-2 rounded-full  py-2 shadow-sm bg-white'>
+    return (
+        <>
           <input
               onKeyDown={(e: any) => {
                   if(e.key === 'Enter') search()
@@ -36,6 +36,6 @@ export default function Search() {
                className='bg-black text-yellow-300 rounded-full cursor-pointer p-2 mx-2'/>
           </button>
       
-    </div>
+    </>
   )
 }

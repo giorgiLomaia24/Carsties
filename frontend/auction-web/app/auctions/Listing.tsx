@@ -12,6 +12,7 @@ import { shallow } from 'zustand/shallow';
 import qs from 'query-string'
 import EmptyFillter from '../components/EmptyFillter';
 import { useAuctionStore } from '@/hooks/useAuctionStore';
+import Loading from '../components/Loading';
 
 
 export default function Listing() {
@@ -40,6 +41,8 @@ export default function Listing() {
 
   const setParams = useParamsStore(state => state.setParams);
   const url = qs.stringifyUrl({ url: '', query: params });
+  const [loading, setLoading] = useState(true);
+
 
   function setPageNumber(pageNumber: number) {
     setParams({ pageNumber });
@@ -52,14 +55,16 @@ export default function Listing() {
   // const [pageSize, setpageSize] = useState(4)
 
   useEffect(() => {
+    setLoading(true)
     getData(url)
       .then(data => {
         setData(data)
+        setLoading(false)
       })
   }, [url]);
 
 
-  if (!data) return <h3>Loading...</h3>
+  if (loading) return <Loading/>
   
   if (data.totalCount === 0) return <EmptyFillter showReset />
   
@@ -70,7 +75,8 @@ export default function Listing() {
     
     <>
       <Filters />
-    <div className='grid grid-cols-4 gap-6'>
+     
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
        {data.auctions && data.auctions.map((auction) => (
                 <Card key={auction.id} auction={auction} />
             ))}

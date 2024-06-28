@@ -58,6 +58,8 @@ namespace IdentityService.Pages.Register
                     });
 
                     RegisterSuccess = true;
+                     return LocalRedirect("http://localhost:3000");
+
                 }
             }
 

@@ -29,7 +29,7 @@ export default function UserActions({ user }: Props) {
     if(pathname !== '/') router.push('/')
   }
   return (
-    <Dropdown label={`Wellcome ${user?.name}`} color={'black'} className='text-white'>
+    <Dropdown label={`${user?.name}`} color={'black'} className='text-white'>
       <Dropdown.Item icon={HiUser} onClick={setSeller} >My auctions</Dropdown.Item>
       <Dropdown.Item icon={AiFillTrophy} onClick={setWinner} >Auctions won</Dropdown.Item>
       <Dropdown.Item icon={AiFillCar} ><Link href={'/auctions/create'}>Sell my car</Link></Dropdown.Item>

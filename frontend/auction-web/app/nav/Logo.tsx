@@ -17,7 +17,7 @@ export default function Logo() {
   }
 
   return (
-    <div onClick={resetLogic} className='cursor-pointer flex items-center gap-2 text-3xl font-semibold text-yellow-500'>
+    <div onClick={resetLogic} className='cursor-pointer flex items-center gap-2 text-1xl font-semibold text-yellow-500'>
     <FaCaravan size={34} />   
     <div>Carsies Auctions</div>      
     </div>

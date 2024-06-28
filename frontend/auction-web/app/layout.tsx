@@ -19,10 +19,10 @@ export default async function RootLayout({
   const user = await getCurrentUser();
   return (
     <html lang="en">
-      <body>
+      <body >
         <ToastrProvider/>      
         <Navbar />
-        <main className="container mx-auto px-5 pt-10">
+        <main className="container mx-auto px-5 pt-10" >
         <SignalRProvider user={user}>
           {children}
        </SignalRProvider>

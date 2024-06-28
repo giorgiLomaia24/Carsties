@@ -5,6 +5,7 @@ import { AiOutlineClockCircle, AiOutlineSortAscending } from 'react-icons/ai';
 import { BsFillStopCircleFill, BsStopwatchFill } from 'react-icons/bs';
 import { GiFinishLine, GiFlame } from 'react-icons/gi';
 import { GrPowerReset } from "react-icons/gr";
+import Search from '../nav/Search';
 
 
 
@@ -57,8 +58,11 @@ export default function Filters() {
 
 
   return (
-      <div className='flex justify-between items-center mb-4'>
-        <div>
+      <div className='flex flex-col md:flex-row md:justify-between items-center mb-4'>
+        <div className="flex md:hidden w-[100%] items-center border-2 rounded-full py-2 shadow-sm bg-white mt-2">
+        <Search/>
+      </div>
+        <div className='mt-2'>
           <span className='uppercase text-sm text-gray-500 mr-2 '>Filter By</span>
               <Button.Group>
                   {
@@ -77,7 +81,7 @@ export default function Filters() {
            </Button.Group>
               
           </div>  
-          <div>
+          <div className='mt-2'>
           <span className='uppercase text-sm text-gray-500 mr-2 '>Order By</span>
               <Button.Group>
                   {
@@ -96,7 +100,7 @@ export default function Filters() {
            </Button.Group>
               
           </div>
-          <div>
+          <div className='mt-2'>
               <span className='uppercase text-sm text-gray-500 mr-2 '>Page Size</span>
               <Button.Group>
                   {pageSizeButtons.map((value, i) => (

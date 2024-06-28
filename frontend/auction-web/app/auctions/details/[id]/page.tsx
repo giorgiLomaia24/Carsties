@@ -27,19 +27,18 @@ export default async function Deatils({ params }: { params: { id: string } }) {
         )}
         </div>       
         <div className='flex gap-3'>
-          <h3 className="text-2xl font-semibold"> Time Remaining :</h3>
           <CountdownTimer auctionEnd={data.auctionEnd } />
         </div>
       </div>
       
 
-      <div className="grid grid-cols-2 gap-6 mt-3">
-        <div className="w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden">
-          <CarImage imageUrl={data.imageUrl} />
-        </div>
-       <BidList user={user} auction={data}/>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-3">
+  <div className="w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden">
+    <CarImage imageUrl={data.imageUrl} />
+  </div>
+  <BidList user={user} auction={data} />
+</div>
 
-      </div>
 
       <div className="grid grid-cols-1 rounded-lg mt-3">
           <DetailedSpecs auction={data}/>
